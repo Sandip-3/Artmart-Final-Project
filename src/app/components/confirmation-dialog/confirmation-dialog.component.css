@@ -1,0 +1,59 @@
+/* Ensure the modal appears above everything else */
+:host {
+  z-index: 10000 !important;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  z-index: 10000 !important;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal container */
+.modal-container {
+  z-index: 10001 !important;
+  position: relative;
+}
+
+/* Modal content */
+.modal-content {
+  z-index: 10002 !important;
+  position: relative;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Smooth backdrop transition */
+.backdrop {
+  backdrop-filter: blur(2px);
+}
+
+/* Focus trap for accessibility */
+.modal-content:focus {
+  outline: none;
+}
+
+/* Button focus styles */
+button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+/* Ensure buttons are clickable */
+button {
+  position: relative;
+  z-index: 10003 !important;
+  pointer-events: auto !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .modal-content {
+    margin: 1rem;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+  }
+} 
